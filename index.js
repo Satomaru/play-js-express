@@ -42,7 +42,8 @@ class Server {
 }
 
 const playJsExpress = {
-  Server: Server
+  Server: Server,
+  Router: express.Router
 }
 
 module.exports = playJsExpress;
