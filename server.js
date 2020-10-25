@@ -2,6 +2,7 @@ const multipart = require('connect-multiparty');
 const express = require('express');
 const webpack = require('webpack');
 const webpackMiddleware = require('webpack-dev-middleware');
+const defaultConfig = require('./webpack.config');
 
 class Server {
 
@@ -9,7 +10,7 @@ class Server {
     this.pjs = pjs;
   }
 
-  init(config) {
+  init(config = defaultConfig) {
     this.app = express();
 
     this.middleware = webpackMiddleware(webpack(config), {
